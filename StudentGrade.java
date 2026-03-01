@@ -66,7 +66,6 @@ public class StudentGrade {
         } while (choice != 3);
     }
 
-    // Display Menu
     public static void displayMenu() {
         System.out.println("\nSTUDENT GRADE MANAGEMENT SYSTEM");
         System.out.println("1. Add Student");
@@ -74,7 +73,6 @@ public class StudentGrade {
         System.out.println("3. Exit");
     }
 
-    // Add Student
     public static void addStudent() {
         System.out.print("Enter Student ID: ");
         String id = sc.nextLine();
@@ -92,7 +90,7 @@ public class StudentGrade {
         System.out.println("Student added successfully!");
     }
 
-    // View All Students
+    
     public static void viewStudents() {
         if (students.isEmpty()) {
             System.out.println("No students recorded.");
@@ -111,7 +109,7 @@ public class StudentGrade {
         System.out.println("-----------------------------------------------------");
     }
 
-    // Grade Input Validation
+    
     public static double getGradeInput(String message) {
         double grade;
 
@@ -120,7 +118,7 @@ public class StudentGrade {
             grade = sc.nextDouble();
 
             if (grade >= 0 && grade <= 100) {
-                sc.nextLine(); // clear buffer
+                sc.nextLine();
                 return grade;
             } else {
                 System.out.println("Invalid grade! Must be between 0 and 100.");
@@ -128,7 +126,6 @@ public class StudentGrade {
         }
     }
 
-    // Integer Input Validation
     public static int getIntInput(String message) {
         System.out.print(message);
         while (!sc.hasNextInt()) {
@@ -137,7 +134,59 @@ public class StudentGrade {
             System.out.print(message);
         }
         int value = sc.nextInt();
-        sc.nextLine(); // clear buffer
+        sc.nextLine();
         return value;
     }
 }
+
+
+/*
+---------Output------
+
+
+run:
+
+STUDENT GRADE MANAGEMENT SYSTEM
+1. Add Student
+2. View All Students
+3. Exit
+Enter choice: 1
+Enter Student ID: 202601
+Enter Student Name: Maria Santos
+Enter Grade for Subject 1: 87
+Enter Grade for Subject 2: 97
+Enter Grade for Subject 3: 78
+Student added successfully!
+
+STUDENT GRADE MANAGEMENT SYSTEM
+1. Add Student
+2. View All Students
+3. Exit
+Enter choice: 1
+Enter Student ID: 202602
+Enter Student Name: Juan Dela Cruz
+Enter Grade for Subject 1: 92
+Enter Grade for Subject 2: 92
+Enter Grade for Subject 3: 92
+Student added successfully!
+
+STUDENT GRADE MANAGEMENT SYSTEM
+1. Add Student
+2. View All Students
+3. Exit
+Enter choice: 2
+-----------------------------------------------------
+ID         Name               Average    Remark         
+-----------------------------------------------------
+202601     Maria Santos       87.33      Very Good      
+202602     Juan Dela Cruz     92.00      Excellent      
+-----------------------------------------------------
+
+STUDENT GRADE MANAGEMENT SYSTEM
+1. Add Student
+2. View All Students
+3. Exit
+Enter choice: 
+
+
+*/
